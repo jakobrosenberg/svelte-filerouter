@@ -15,7 +15,7 @@
     }
 </script>
 
-<span on:click={hide}> Routify Helper </span>
+<span> Routify Helper </span>
 
 <select bind:value={level}>
     {#each Object.entries(logLevels) as [name, value]}
@@ -24,3 +24,24 @@
         </option>
     {/each}
 </select>
+
+<a toggle on:click={hide}><span></span></a>
+
+<style>
+[toggle] {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+[toggle] span {
+    display: inline-block;
+    margin: 8px 6px;
+    width: 16px;
+    height: 16px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDUwIDUwIj48cGF0aCBmaWxsPSIjNDQ0IiBkPSJNMTUuNTYzIDQwLjgzNmEuOTk3Ljk5NyAwIDAgMCAxLjQxNCAwbDE1LTE1YTEgMSAwIDAgMCAwLTEuNDE0bC0xNS0xNWExIDEgMCAwIDAtMS40MTQgMS40MTRMMjkuODU2IDI1LjEzIDE1LjU2MyAzOS40MmExIDEgMCAwIDAgMCAxLjQxNHoiLz48L3N2Zz4=);
+    transform: rotate(90deg);
+}
+</style>
